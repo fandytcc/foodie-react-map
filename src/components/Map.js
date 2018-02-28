@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { compose, withProps } from 'recompose'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 
 const amsterdam = { lat: 52.370, lng: 4.895 }
 // arrays of lat-lng of restaurants stored in database..
@@ -21,11 +21,10 @@ const MyMapComponent = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height:`400px` }} />,
+    containerElement: <div style={{ height:`200px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
     center: amsterdam,
   }),
-  withScriptjs,
   withGoogleMap
 )((props) =>
   <GoogleMap
@@ -64,7 +63,6 @@ class Map extends PureComponent {
         <MyMapComponent
           isMarkerShown={this.state.isMarkerShown}
           onMarkerClick={this.handleMarkerClick}
-          center={this.state.center}
         />
       </div>
     )

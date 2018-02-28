@@ -13,7 +13,7 @@ import IconButton from 'material-ui/IconButton'
 import ActionHome from 'material-ui-icons/Home'
 import './Navigation.css'
 
-const TITLE = 'Student Evaluations'
+const TITLE = 'foodie fan'
 
 class Navigation extends PureComponent {
   static propTypes = {
