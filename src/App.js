@@ -18,11 +18,14 @@ class App extends Component {
   }
 
   render() {
+    const location = { lat: 0, lng: 0 }
     return (
       <MuiThemeProvider theme={createMuiTheme}>
         <div className="App">
           <Navigation />
-          <Map />
+          <div style={{width: 300, height: 600}}>
+            <Map center={location}/>
+          </div>
           <Places />
         </div>
       </MuiThemeProvider>
