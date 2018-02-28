@@ -4,10 +4,10 @@ import { createMuiTheme } from 'material-ui/styles'
 export const green        = '#4ECDC4'
 export const red          = '#FF6B6B'
 export const yellow       = '#FFE66D'
-export const darkGreen    = '#1A535C'
+export const babyBlue     = '#B9E1DC'
 export const white        = '#ffffff'
 export const black        = '#000000'
-export const grey         = '#DEDEDE'
+export const grey         = '#FBFBFB'
 export const grey50       = 'rgba(222, 222, 222, 0.5)'
 export const grey30       = 'rgba(222, 222, 222, 0.7)'
 
@@ -25,9 +25,9 @@ const theme = createMuiTheme({
    palette: {
      primary: {
        light: green,
-       main: darkGreen,
-       dark: darkGreen,
-       contrastText: white,
+       main: babyBlue,
+       dark: babyBlue,
+       contrastText: grey,
      },
      secondary: {
        light: grey30,
