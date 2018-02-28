@@ -5,14 +5,16 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-map
 const amsterdam = { lat: 52.370, lng: 4.895 }
 // arrays of lat-lng of restaurants stored in database..
 // const markers = this.props.markers.map((restaurant, i) => {
-//   const marker = {
-//     position: {
+//   const marker = [
+//     {
+//       position: {
 //       lat: restaurant.location.lat,
 //       lng: restaurant.location.lng
+//       }
 //     }
-//   }
+//   ]
 //
-//   return <Marker key={restaurant.id} {...marker} />
+//   return <Marker key={i} {...marker} />
 // })
 
 const MyMapComponent = compose(
