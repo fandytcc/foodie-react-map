@@ -19,7 +19,7 @@ const amsterdam = { lat: 52.370, lng: 4.895 }
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC3fkI5cmZi2jtO5ejOB08GNoczGHHZPGA&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height:`200px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -30,7 +30,6 @@ const MyMapComponent = compose(
   <GoogleMap
     defaultZoom={10}
     defaultCenter={props.center}
-    defaultOption={{streetViewControl: false, mapTypeControl: false}}
   >
     {props.isMarkerShown && <Marker position={props.center}/>}
   </GoogleMap>
