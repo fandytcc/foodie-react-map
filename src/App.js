@@ -7,6 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import createMuiTheme from './styles/theme'
 import Map from './components/Map'
 import Places from './components/Places'
+import { PlacesWithStandaloneSearchBox } from './components/SearchBar'
 
 class App extends Component {
   static childContextTypes = {
@@ -23,6 +24,7 @@ class App extends Component {
       <MuiThemeProvider theme={createMuiTheme}>
         <div className="App">
           <Navigation />
+          <PlacesWithStandaloneSearchBox />
           <div style={{width: 300, height: 600}}>
             <Map center={location}/>
           </div>
