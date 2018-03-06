@@ -8,8 +8,16 @@ import createMuiTheme from './styles/theme'
 import Map from './components/Map'
 import Places from './components/Places'
 import { PlacesWithStandaloneSearchBox } from './components/SearchBar'
+import { Marker } from 'react-google-maps'
+import superagent from 'superagent'
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      venues: []
+    }
+  }
   static childContextTypes = {
     createMuiTheme: PropTypes.object.isRequired,
   }
@@ -18,17 +26,36 @@ class App extends Component {
     return { createMuiTheme }
   }
 
+  componentDidMount() {
+    const url = 'https://api.foursquare.com/v2/venues/search?v=20180306&ll=52.3702,4.8952&query=food&client_id=22I530SVNOJBUZT245DJGRBYYM0GRMZEQSOYMLNC2Q2JUJ2L&client_secret=WPZUQLMGNPI2BCYYM2M4VX2OAEAYSSNMJPUX1YBN2FYWDHIJ'
+
+    superagent
+    .get(url)
+    .query(null)
+    .set('Accept', 'text/json')
+    .end((error, response) => {
+
+      const venues = response.body.response.venues
+      console.log(JSON.stringify(venues))
+      this.setState({
+        venues: venues
+      })
+    })
+  }
+
   render() {
-    const location = { lat: 0, lng: 0 }
+    console.log(this.state)
+    const amsterdam = { lat: 52.370, lng: 4.895 }
+
     return (
       <MuiThemeProvider theme={createMuiTheme}>
         <div className="App">
           <Navigation />
-          <PlacesWithStandaloneSearchBox />
-          <div style={{width: 300, height: 600}}>
-            <Map center={location}/>
+
+          <div style={{width:400, float:'left', margin:15}}>
+            <Map center={amsterdam} markers={this.state.venues} />
           </div>
-          <Places />
+          <Places venues={this.state.venues}/>
         </div>
       </MuiThemeProvider>
     )
