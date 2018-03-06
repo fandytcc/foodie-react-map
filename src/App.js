@@ -45,15 +45,15 @@ class App extends Component {
 
   render() {
     console.log(this.state)
-    const location = { lat: 52.370, lng: 4.895 }
+    const amsterdam = { lat: 52.370, lng: 4.895 }
 
     return (
       <MuiThemeProvider theme={createMuiTheme}>
         <div className="App">
           <Navigation />
 
-          <div style={{width: 300, height: 600}}>
-            <Map center={location} markers={this.state.venues} />
+          <div style={{width:400, float:'left', margin:15}}>
+            <Map center={amsterdam} markers={this.state.venues} />
           </div>
           <Places venues={this.state.venues}/>
         </div>
