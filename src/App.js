@@ -52,7 +52,7 @@ class App extends Component {
         <div className="App">
           <Navigation />
 
-          <div style={{width:400, float:'left', margin:15}}>
+          <div style={{width:`35%`, float:'left', margin:20}}>
             <Map center={amsterdam} markers={this.state.venues} />
           </div>
           <Places venues={this.state.venues}/>

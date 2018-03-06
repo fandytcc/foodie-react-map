@@ -6,10 +6,9 @@ class Places extends PureComponent {
   render() {
     console.log(this.props)
     const list = this.props.venues.map((venue, i) => {
-      // if (!venue.contact) return null
       return (
       <div class='restaurant' style={{height:'auto', marginBottom:5}}>
-        <Paper key={i} elevation={0}>
+        <Paper style={{width:`100%`}} key={i} elevation={0}>
           <div class='restaurant-details' style={{padding:40}}>
             <Typography variant="title">{venue.name}</Typography>
             <Typography component="p">{venue.location.formattedAddress}</Typography>
@@ -23,7 +22,7 @@ class Places extends PureComponent {
     })
 
     return (
-      <div class='restaurant-container' style={{float:'right', textAlign:'left', width:660, margin: 20}}>
+      <div class='restaurant-container' style={{display:'flex', flexDirection:'column', textAlign:'left', width:`60%`, margin: 20}}>
         {list}
       </div>
     )

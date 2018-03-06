@@ -38,20 +38,18 @@ class Navigation extends PureComponent {
   render() {
     const { signedIn } = this.props
     return (
-      <div className="navbar">
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton className="icon-button" color="inherit" aria-label="go-home" onClick={this.goHome}>
-              <ActionHome />
-            </IconButton>
-            <Typography variant="title" color="inherit" className="title" >
-              {TITLE}
-            </Typography>
-            { signedIn ?
-              <Button color="inherit" style={{position: "absolute", top: 10, right: 0 }} onClick={this.signOut.bind(this)}>Sign Out</Button> : <Button color="inherit" style={{position: "absolute", top: 10, right: 0 }} onClick={this.signUp}>Sign Up</Button> }
-          </Toolbar>
-        </AppBar>
-      </div>
+      <AppBar position="static" style={{boxShadow:'none', width:`100%`}}>
+        <Toolbar>
+          <IconButton className="icon-button" color="inherit" aria-label="go-home" onClick={this.goHome}>
+            <ActionHome />
+          </IconButton>
+          <Typography variant="title" color="inherit" className="title" >
+            {TITLE}
+          </Typography>
+          { signedIn ?
+            <Button color="inherit" style={{position: "absolute", top: 10, right: 0 }} onClick={this.signOut.bind(this)}>Sign Out</Button> : <Button color="inherit" style={{position: "absolute", top: 10, right: 0 }} onClick={this.signUp}>Sign Up</Button> }
+        </Toolbar>
+      </AppBar>
     )
   }
 }
