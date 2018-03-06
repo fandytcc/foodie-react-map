@@ -31,7 +31,7 @@ Started on 28th Feb:
 * start working on steps 1 to 4 as mentioned above
 * implemented Google Map API and fetched data from Foursquare API in JSON format 
 
-Next step: decide to make if using purely Google/ Foursquare API or creating own API with seed data
+Next step: decision to make if using purely Google/ Foursquare API or creating own API with seed data
 
 ## Running Locally
 Make sure you have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/en/) installed.
