@@ -3,19 +3,6 @@ import { compose, withProps } from 'recompose'
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 
 const amsterdam = { lat: 52.370, lng: 4.895 }
-// arrays of lat-lng of restaurants stored in database..
-// const markers = this.props.markers.map((restaurant, i) => {
-//   const marker = [
-//     {
-//       position: {
-//       lat: restaurant.location.lat,
-//       lng: restaurant.location.lng
-//       }
-//     }
-//   ]
-//
-//   return <Marker key={i} {...marker} />
-// })
 
 const MyMapComponent = compose(
   withProps({
@@ -31,14 +18,13 @@ const MyMapComponent = compose(
     defaultZoom={10}
     defaultCenter={props.center}
   >
-    {props.isMarkerShown && <Marker position={props.center}/>}
+    {props.isMarkerShown && props.markers}
   </GoogleMap>
 )
 
 class Map extends PureComponent {
   state = {
     isMarkerShown: false,
-    center: "",
   }
 
   componentDidMount() {
@@ -57,11 +43,25 @@ class Map extends PureComponent {
   }
 
   render() {
+    console.log(this.props)
+    const markers = this.props.markers.map((venue, i) => {
+      const marker = {
+        position: {
+          lat: venue.location.lat,
+          lng: venue.location.lng
+        },
+        label: venue.name
+      }
+
+      return <Marker key={i} {...marker} onClick={this.props.onMarkerClick} />
+    })
+
     return (
       <div>
         <MyMapComponent
           isMarkerShown={this.state.isMarkerShown}
           onMarkerClick={this.handleMarkerClick}
+          markers={markers}
         />
       </div>
     )
