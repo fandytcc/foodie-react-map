@@ -36,7 +36,7 @@ class App extends Component {
     .end((error, response) => {
 
       const venues = response.body.response.venues
-      console.log(JSON.stringify(venues))
+      // console.log(JSON.stringify(venues))
       this.setState({
         venues: venues
       })
@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     const amsterdam = { lat: 52.370, lng: 4.895 }
 
     return (
