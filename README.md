@@ -26,8 +26,8 @@ These are the steps I plan to work on this app:
 Make sure you have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/en/) installed.
 
 ```bash
-git clone git@github.com:fandytcc/foodie-react-app.git
-cd foodie-react-app
+git clone git@github.com:fandytcc/foodie-react-map.git
+cd foodie-react-map
 yarn install
 yarn start
 ```
